@@ -1,0 +1,15 @@
+                          day---1
+
+1. npx create-react-app (file name like) first-project and enter
+2. cd first-project and enter 
+3. npm start and enter (the file will be run)
+
+                         day---2
+
+for uninstall command npm uninstall create-react-app -g
+                      npm install create-react-app -g
+                      ctrl c for stop the terminal and enter y
+4.install react-router-dom in our project npm i react-router-dom
+5.in index.js browserRouter setup and import and added browserRouter in above app.js
+6.in app.js routes and route setup and import
+7.create components in src folder in components files like homepage, login, register.                      
