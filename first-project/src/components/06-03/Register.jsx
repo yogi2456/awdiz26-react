@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
+import toast from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
+
+  const router = useNavigate();
 
     const [userData, setUserData] = useState({name : "", email : "", password : "", confirmpassword : ""})
       // userData.name
@@ -16,7 +20,16 @@ const Register = () => {
         event.preventDefault();
         if(userData.name && userData.email && userData.password && userData.confirmpassword) {
               // await calling backend one server to another server request, backend validation, data to store mongodb
-            alert("Registeration COmpleted.")
+              try {
+                const response = {data: {success: true, message: "Registration Successfull"}}
+                if(response.data.success) {
+                  toast.success(response.data.message)
+                  setUserData({name : "", email : "", password : "", confirmpassword : ""})
+                  router('/login')
+                }
+              } catch (error) {
+                toast.error(error)
+              }
         } else {
             alert("All fields are required")
         }

@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
+import toast from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+
+    const router = useNavigate();
     const [userData, setUserData] = useState({email: "", password: ""})
     //console.log(userData)
 
@@ -12,7 +16,16 @@ const Login = () => {
     function handleSubmit (event) {
         event.preventDefault();
         if(userData.email && userData.password) {
-            alert("login successful")
+            try {
+                const response = {data: {success: true, message: "Login Successfull"}}
+                if(response.data.success) {
+                    toast.success(response.data.message)
+                    setUserData({email: "", password: ""})
+                    router('/')
+                }
+            } catch (error) {
+                toast.error(error)
+            }
         } else {
             alert("All fields are required")
         }
@@ -22,9 +35,9 @@ const Login = () => {
             <h1>Login Page</h1>
             <form onSubmit={handleSubmit}>
                 <label>Email : </label> <br/>
-                <input type='email' onChange={handleChange} required name='name'/> <br/>
+                <input type='email' onChange={handleChange} required name='email'/> <br/>
                 <label>Password : </label> <br/>
-                <input type='password' onChange={handleChange} required/> <br/>
+                <input type='password' onChange={handleChange} required name='password'/> <br/>
                 <input type='submit' value="Login"/>
             </form>
         </div>

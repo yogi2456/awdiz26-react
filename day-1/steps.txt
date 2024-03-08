@@ -12,4 +12,23 @@ for uninstall command npm uninstall create-react-app -g
 4.install react-router-dom in our project npm i react-router-dom
 5.in index.js browserRouter setup and import and added browserRouter in above app.js
 6.in app.js routes and route setup and import
-7.create components in src folder in components files like homepage, login, register.                      
+7.create components in src folder in components files like homepage, login, register.       
+
+                          day-----3
+
+counter with usestate
+
+                          day---4
+
+topics of Ternary Operator
+          UseEffect(effect1, effect2, effect3, effect4)
+
+                         day---6
+
+register setup with usestate
+
+                          day---7
+
+registeration successful frontend to backend setup
+toaster and npm i react-hot-toast
+and dsa problem                          
