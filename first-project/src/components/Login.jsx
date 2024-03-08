@@ -19,7 +19,7 @@ const Login = () => {
             try {
                 const response = {data: {success: true, message: "Login Successfull"}}
                 if(response.data.success) {
-                    toast.success(response.data.message)
+                    toast.success(response.data.message, { position: "top-right"})
                     setUserData({email: "", password: ""})
                     router('/')
                 }

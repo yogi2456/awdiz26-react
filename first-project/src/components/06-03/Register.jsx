@@ -23,7 +23,7 @@ const Register = () => {
               try {
                 const response = {data: {success: true, message: "Registration Successfull"}}
                 if(response.data.success) {
-                  toast.success(response.data.message)
+                  toast.success(response.data.message, { position: "top-right"})
                   setUserData({name : "", email : "", password : "", confirmpassword : ""})
                   router('/login')
                 }
