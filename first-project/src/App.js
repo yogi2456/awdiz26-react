@@ -10,8 +10,13 @@ import EffectTwo from './components/03-03/EffectTwo';
 import EffectThree from './components/03-03/EffectThree';
 import EffectFour from './components/03-03/EffectFour';
 import Register from './components/06-03/Register';
+import UseReduer from './components/09-03/UseReduer';
+import PropsDrilling from './components/09-03/PropsDrilling';
+import { useState } from 'react';
 
 function App() {
+  const [student, setStudent] = useState(["a", "b", "c", "d"])
+  const [counter, setCounter] = useState(1234)
   return (
     <div className="App">
       <Routes>
@@ -24,6 +29,8 @@ function App() {
         <Route path='/effectthree' element={ <EffectThree/>} />
         <Route path='/effectfour' element={ <EffectFour/>} />
         <Route path='/register' element={ <Register/>} />
+        <Route path='/usereducer' element={ <UseReduer/>} />
+        <Route path='/propsdrilling' element={ <PropsDrilling student={student} counter={counter}/> } />
       </Routes>
     </div>
   );
