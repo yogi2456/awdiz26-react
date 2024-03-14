@@ -32,3 +32,10 @@ register setup with usestate
 registeration successful frontend to backend setup
 toaster and npm i react-hot-toast
 and dsa problem                          
+
+                         day---8
+usereducer, propsdrilling and children setup 
+
+                         day---9
+
+all-products duplicate, all-products with fake api and countercontext                         
