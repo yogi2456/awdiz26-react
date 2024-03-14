@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
+import { AuthContext } from './Context/AuthContext';
 
 const Login = () => {
 
     const router = useNavigate();
+
+    const { LOGIN } =useContext(AuthContext)
     const [userData, setUserData] = useState({email: "", password: ""})
     //console.log(userData)
 
@@ -17,8 +20,10 @@ const Login = () => {
         event.preventDefault();
         if(userData.email && userData.password) {
             try {
-                const response = {data: {success: true, message: "Login Successfull"}}
+                const response = {data: {success: true, message: "Login Successfull", token: "abdgbhhhhhufejksjk", userData: {name: "yogesh", email: "yogesh@gmail.com"}}}
                 if(response.data.success) {
+                    localStorage.setItem("token", JSON.stringify(response.data.token))
+                    LOGIN(response.data.userData)
                     toast.success(response.data.message, { position: "top-right"})
                     setUserData({email: "", password: ""})
                     router('/')
