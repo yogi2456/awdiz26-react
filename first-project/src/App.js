@@ -16,6 +16,7 @@ import { useState } from 'react';
 import AllProducts from './components/10-03/AllProducts';
 import FakeStoreAllProducts from './components/10-03/FakeStoreAllProducts';
 import Todos from './components/15-03/Todos';
+import Todo from './components/15-03/Todo';
 
 function App() {
   const [student, setStudent] = useState(["a", "b", "c", "d"])
@@ -49,6 +50,7 @@ function App() {
         <Route path='/all-products' element={ <AllProducts awdiz={products}/>} />
         <Route path='/fake-store-all-products' element= { <FakeStoreAllProducts/>} />
         <Route path='/todos' element= { <Todos/>} />
+        <Route path='/todo' element= { <Todo/>} />
       </Routes>
     </div>
   );
