@@ -24,7 +24,7 @@ const Login = () => {
                 if(response.data.success) {
                     localStorage.setItem("token", JSON.stringify(response.data.token))
                     LOGIN(response.data.userData)
-                    toast.success(response.data.message, { position: "top-right"})
+                    toast.success(response.data.message,) 
                     setUserData({email: "", password: ""})
                     router('/')
                 }
@@ -50,3 +50,5 @@ const Login = () => {
 }
 
 export default Login;
+
+// { position: "top-right"}

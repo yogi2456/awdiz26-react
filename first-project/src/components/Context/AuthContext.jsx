@@ -1,4 +1,5 @@
 import { createContext, useEffect, useReducer } from 'react'
+import toast from 'react-hot-toast';
 
 export const AuthContext = createContext();
 
@@ -25,6 +26,7 @@ const AuthContextComponent = ({ children }) => {
 
     function LOGOUT() {
         dispatch({ type: "LOGOUT" })
+        toast.success("logout successfull")
     }
 
     async function getUserData(token) {

@@ -18,9 +18,9 @@ const Todos = () => {
     }
 
     function handleDelete(index) {
-        const todo = [...todos];
-        todo.splice(index, 1);
-        setTodos(todo)
+        const newTodo = [...todos];
+        newTodo.splice(index, 1);
+        setTodos(newTodo)
     }
   return (
     <div>
