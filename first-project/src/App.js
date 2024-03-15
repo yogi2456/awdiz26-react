@@ -15,6 +15,7 @@ import PropsDrilling from './components/09-03/PropsDrilling';
 import { useState } from 'react';
 import AllProducts from './components/10-03/AllProducts';
 import FakeStoreAllProducts from './components/10-03/FakeStoreAllProducts';
+import Todos from './components/15-03/Todos';
 
 function App() {
   const [student, setStudent] = useState(["a", "b", "c", "d"])
@@ -47,6 +48,7 @@ function App() {
         <Route path='/propsdrilling' element={ <PropsDrilling student={student} counter={counter}/> } />
         <Route path='/all-products' element={ <AllProducts awdiz={products}/>} />
         <Route path='/fake-store-all-products' element= { <FakeStoreAllProducts/>} />
+        <Route path='/todos' element= { <Todos/>} />
       </Routes>
     </div>
   );
