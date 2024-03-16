@@ -17,8 +17,8 @@ const Todo = () => {
         setTodos("")
     }
 
-    function handleDelete(index) {
-        console.log(index)
+    const handleDelete = (index) => {
+        //console.log(index)
         const newDelete = [...newTodos];
         newDelete.splice(index, 1);
         setNewTodos(newDelete)
@@ -26,11 +26,12 @@ const Todo = () => {
   return (
     <div>
       <h1>Todos</h1>
-      <input type='text' value={todos} onChange={handleChange} placeholder='Type your favourites games' />
+      <input type='text' value={todos} onChange={handleChange} placeholder='Type your favourites Sports' />
       <button onClick={handleSubmit}>Submit</button>
       {newTodos.length? <div>
-        {newTodos.map((todo, i) => (
-            <p>{i + 1}. {todo}  <span><button onClick={handleDelete}>Delete</button></span></p>
+        <h2>Your Todos</h2>
+        {newTodos.map((todo, index) => (
+            <p>{index + 1}. {todo}  <span><button onClick={() => handleDelete(index)}>Delete</button></span></p>
         ))}
       </div> : <h1>Todos not found</h1>}
     </div>
