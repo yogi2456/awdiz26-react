@@ -17,6 +17,11 @@ import AllProducts from './components/10-03/AllProducts';
 import FakeStoreAllProducts from './components/10-03/FakeStoreAllProducts';
 import Todos from './components/15-03/Todos';
 import Todo from './components/15-03/Todo';
+import Navbar from './components/global/Navbar';
+// import Footer from './components/global/Footer';
+import PageNotFound from './components/global/PageNotFound';
+import FakeStoreSingleProduct from './components/16-03/FakeStoreSingleProduct';
+import Render from './components/16-03/Render';
 
 function App() {
   const [student, setStudent] = useState(["a", "b", "c", "d"])
@@ -35,7 +40,9 @@ function App() {
   ])
   return (
     <div className="App">
+      <Navbar/>
       <Routes>
+        <Route path='*' element={ <PageNotFound/> } />
         <Route path='/' element={ <Home/> } />
         <Route path='/login' element={ <Login/>} />
         <Route path='/counter' element={ <Counter/>} />
@@ -51,7 +58,10 @@ function App() {
         <Route path='/fake-store-all-products' element= { <FakeStoreAllProducts/>} />
         <Route path='/todos' element= { <Todos/>} />
         <Route path='/todo' element= { <Todo/>} />
+        <Route path='/fake-store-single-product/:id' element= {<FakeStoreSingleProduct/>} />
+        <Route path='/render' element={<Render/>}/>
       </Routes>
+      {/* <Footer/> */}
     </div>
   );
 }

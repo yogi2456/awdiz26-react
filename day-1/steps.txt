@@ -31,6 +31,7 @@ register setup with usestate
 
 registeration successful frontend to backend setup
 toaster and npm i react-hot-toast
+axios for npm i axios
 and dsa problem                          
 
                          day---8
@@ -42,4 +43,13 @@ all-products duplicate, all-products with fake api and countercontext
 
                          day---10
 
-usecontext with login logout setup and token                         
+usecontext with login logout setup and token
+
+                          day---11
+
+todo page 
+
+                          day---12
+
+page not found, navbar and footer import 
+fakestore single product and useparams                          
