@@ -62,4 +62,21 @@ Currencyconverter small project
 
 redux concept
 npm i redux react-redux
-npm install @reduxjs/toolkit                          
+npm install @reduxjs/toolkit
+first create a componet like counterRedux
+and create a folder redux and in this one file store.js and two folders in this two folders
+1. action > counter.action.js       
+ in this action we should only create a functions                    
+2. reducer > 1. counter.reducer.js 2. rootreducer.js
+in this counter reducer we should create a initial state and reducer (state, action) > switch(action.type) and cases
+in this rootreducer import the counter reducer and create a instance and import the combinereducer and call the function and pass the object
+
+in the redux file store.js in this import the rootreducer and create a instance and import the configurestore and call the function and pass the object eith using reducer
+
+in the component of counterredux in this import the action function and import usedispatch, useselector and we call the function with dispatch
+const dispatch = usedispatch();
+and with useselector call a atate
+const counter = useselector((state) => state.(rootreducer)counter.(counterreducer)counter)
+and  <h1>{counter}</h1>
+      <button onClick={() => dispatch(Increment())}>+</button>
+      <button onClick={() => dispatch(Decrement())}>-</button>
