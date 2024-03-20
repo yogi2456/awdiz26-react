@@ -8,7 +8,7 @@ function Reducer(state, action) {
         case "LOGIN":
             return { ...state, user: action.payload }
         case "LOGOUT":
-            return { ...state, user: null }
+            return { ...state, }
         default:
             return state;
     }

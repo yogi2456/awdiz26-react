@@ -22,8 +22,15 @@ import Navbar from './components/global/Navbar';
 import PageNotFound from './components/global/PageNotFound';
 import FakeStoreSingleProduct from './components/16-03/FakeStoreSingleProduct';
 import Render from './components/16-03/Render';
+import CurrencyConverter from './components/17-03/CurrencyConverter';
+import React, { useContext } from 'react'
+// import styled from "styled-components";
+import { ThemeContext } from './components/Context/ThemeContext';
+import CounterRedux from './components/20-03/CounterRedux';
+// import Icon_darkMode from './components/Icons/Icon_darkMode';
 
 function App() {
+  const { themeValue} = useContext(ThemeContext)
   const [student, setStudent] = useState(["a", "b", "c", "d"])
   const [counter, setCounter] = useState(1234)
   const [products, setProducts] = useState([
@@ -40,6 +47,12 @@ function App() {
   ])
   return (
     <div className="App">
+      {/* <div>
+        <AppStyled color={themeValue.body}>
+      <TitlePage color={themeValue.text}>Dark Mode</TitlePage>
+      <Icon_darkMode></Icon_darkMode>
+      </AppStyled>
+    </div> */}
       <Navbar/>
       <Routes>
         <Route path='*' element={ <PageNotFound/> } />
@@ -60,6 +73,8 @@ function App() {
         <Route path='/todo' element= { <Todo/>} />
         <Route path='/fake-store-single-product/:id' element= {<FakeStoreSingleProduct/>} />
         <Route path='/render' element={<Render/>}/>
+        <Route path='/currency-converter' element={<CurrencyConverter/>} />
+        <Route path='/counter-redux' element={<CounterRedux/>} />
       </Routes>
       {/* <Footer/> */}
     </div>
@@ -67,3 +82,22 @@ function App() {
 }
 
 export default App;
+
+
+// const AppStyled = styled.div`
+//   width: 100%;
+//   height: 100vh;
+
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: ${(props) => props.color};
+//   transition: all 0.25s ease;
+// `;
+
+// const TitlePage = styled.h1`
+//   color: ${(props) => props.color};
+//   font-size: 3.125rem;
+//   margin-bottom: 1.25rem;
+// `;

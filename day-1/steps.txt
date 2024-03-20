@@ -52,4 +52,14 @@ todo page
                           day---12
 
 page not found, navbar and footer import 
-fakestore single product and useparams                          
+fakestore single product and useparams   
+
+                          day----13
+
+Currencyconverter small project
+
+                          day----14
+
+redux concept
+npm i redux react-redux
+npm install @reduxjs/toolkit                          

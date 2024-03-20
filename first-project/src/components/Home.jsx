@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { MyCounterContext } from './Context/CounterContext';
 import { AuthContext } from './Context/AuthContext';
 import { useNavigate } from 'react-router-dom'
+// import { ThemeContext } from './Context/ThemeContext';
 
 const Home = () => {
 
@@ -9,6 +10,7 @@ const Home = () => {
 
     const {counter, Increment, Decrement, Reset} = useContext(MyCounterContext)
     const { state, LOGOUT } = useContext(AuthContext)
+    // const { changeTheme } = useContext(ThemeContext);
 
     return (
         <div>
@@ -21,6 +23,7 @@ const Home = () => {
             <button onClick={Decrement}>-</button>
             <button onClick={Reset}>Reset</button>
         </div>
+        
     )
 }
 
