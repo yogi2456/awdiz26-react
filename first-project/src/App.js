@@ -27,6 +27,7 @@ import React, { useContext } from 'react'
 // import styled from "styled-components";
 import { ThemeContext } from './components/Context/ThemeContext';
 import CounterRedux from './components/20-03/CounterRedux';
+import UseMemo from './components/22-03/UseMemo';
 // import Icon_darkMode from './components/Icons/Icon_darkMode';
 
 function App() {
@@ -75,6 +76,7 @@ function App() {
         <Route path='/render' element={<Render/>}/>
         <Route path='/currency-converter' element={<CurrencyConverter/>} />
         <Route path='/counter-redux' element={<CounterRedux/>} />
+        <Route path='/use-memo' element={<UseMemo/>} />
       </Routes>
       {/* <Footer/> */}
     </div>

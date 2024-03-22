@@ -71,7 +71,11 @@ and create a folder redux and in this one file store.js and two folders in this 
 in this counter reducer we should create a initial state and reducer (state, action) > switch(action.type) and cases
 in this rootreducer import the counter reducer and create a instance and import the combinereducer and call the function and pass the object
 
-in the redux file store.js in this import the rootreducer and create a instance and import the configurestore and call the function and pass the object eith using reducer
+in the redux file store.js in this import the rootreducer and create a instance and import the configurestore and call the function and pass the object with using reducer
+and in the index.js import the provider with redux-react and import the store.js
+  <Provider store={store}>
+    <App/>
+  <Provider>
 
 in the component of counterredux in this import the action function and import usedispatch, useselector and we call the function with dispatch
 const dispatch = usedispatch();

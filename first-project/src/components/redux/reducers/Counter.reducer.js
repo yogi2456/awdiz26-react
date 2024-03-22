@@ -1,4 +1,4 @@
-const InitialState = { counter: 1 }
+const InitialState = { counter: 1234 }
 
 const counterReducer = (state = InitialState, action) => {
     switch(action.type) {

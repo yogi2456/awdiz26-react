@@ -11,7 +11,7 @@ const CounterRedux = () => {
       <h1>{counter}</h1>
       <button onClick={() => dispatch(Increment())}>+</button>
       <button onClick={() => dispatch(Decrement())}>-</button>
-      {/* <button onClick={() => dispatch(Reset())}>Reset</button> */}
+      <button onClick={() => dispatch(Reset())}>Reset</button>
     </div>
   )
 }
