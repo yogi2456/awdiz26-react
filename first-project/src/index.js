@@ -10,6 +10,7 @@ import AuthContextComponent from './components/Context/AuthContext';
 import ThemeContextComponent from './components/Context/ThemeContext';
 import { Provider } from 'react-redux';
 import store from './components/redux/Store';
+import stores from './components/redux/Stores';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -43,8 +44,10 @@ root.render(
     },
   }}
 />
-    <Provider store={store}> 
+    <Provider store={store}>
+      <Provider store={stores}> 
       <App />
+      </Provider>
     </Provider>   
       </ProviderCounterContext>
       </AuthContextComponent>

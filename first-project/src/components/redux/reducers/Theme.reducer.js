@@ -1,29 +1,53 @@
-// const ChangeTheme =  {
-//     light: {
-//         background: "#eee",
-//         color: "#333",
-//     },
-//     dark: {
-//         background: "#333",
-//         color: "#eee",
-//     },
-// };
+const ChangeTheme =  {
+    light: {
+        background: "white",
+        color: "black",
+    },
+    dark: {
+        background: "black",
+        color: "white",
+    },
+};
 
 
-// const InitialState = { theme : ChangeTheme.light }
+const InitialState = { theme : ChangeTheme.light }
 
-// const themeReducer = function (state = InitialState, action) {
-//     switch(action.type) {
-//         case "LIGHT": 
-//             return {...state, theme: ChangeTheme.light };
-//         case "DARK":
-//             return {...state, theme: ChangeTheme.dark };
-//         default:
-//             return state;        
-//     }
-// }
+const themeReducer = function (state = InitialState, action) {
+    switch(action.type) {
+        case "LIGHT": 
+            return {...state, theme: ChangeTheme.light };
+        case "DARK":
+            return {...state, theme: ChangeTheme.dark };
+        default:
+            return state;        
+    }
+}
 
-// export default themeReducer;
+export default themeReducer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // import { CHANGETHEME } from "../ActionsType";
 
@@ -39,20 +63,20 @@
 // export default ThemeReducer;
 
 
-import { SET_DARK_THEME } from "../actions/Theme.actions";
+// import { SET_DARK_THEME } from "../actions/Theme.actions";
 
-const initialState = {
-    theme: "light",
-};
+// const initialState = {
+//     theme: "light",
+// };
 
-const themeReducer = (state = initialState, actions) => {
-    switch (actions.type) {
-        case SET_DARK_THEME:
-            return {...state, theme: actions.payload };
+// const themeReducer = (state = initialState, actions) => {
+//     switch (actions.type) {
+//         case SET_DARK_THEME:
+//             return {...state, theme: actions.payload };
     
-        default:
-            return state;
-    }
-};
+//         default:
+//             return state;
+//     }
+// };
 
-export default themeReducer;
+// export default themeReducer;
