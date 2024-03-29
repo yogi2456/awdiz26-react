@@ -6,10 +6,11 @@ const ThemeRedux = () => {
 
     const dispatch = useDispatch();
     const theme = useSelector((state) => state.theme.theme )
+    console.log(theme)
 
   return (
-    <div style={{theme}}>
-      <div>
+    <div style={ theme }>
+      <div style={{ height: "90vh", width: "100vw"}}>
         <h1>Redux Theme</h1>
         <button onClick={() => dispatch(Light())}>Light Theme</button>
         <button onClick={() => dispatch(Dark())}>Dark Theme</button>

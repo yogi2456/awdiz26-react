@@ -10,9 +10,9 @@ const ChangeTheme =  {
 };
 
 
-const InitialState = { theme : ChangeTheme.light }
+const initialState = { theme : ChangeTheme.light }
 
-const themeReducer = function (state = InitialState, action) {
+const themeReducer = function (state = initialState, action) {
     switch(action.type) {
         case "LIGHT": 
             return {...state, theme: ChangeTheme.light };
