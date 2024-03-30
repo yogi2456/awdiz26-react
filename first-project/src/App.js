@@ -31,9 +31,34 @@ import UseMemo from './components/22-03/UseMemo';
 import UseCallback from './components/23-03/UseCallback';
 import ThemeRedux from './components/20-03/ThemeRedux';
 import Icon_darkMode from './components/Icons/Icon_darkMode';
+import PropFilter from './components/30-03/PropFilter';
+import Navbar2 from './components/30-03/Navbar2';
 // import Icon_darkMode from './components/Icons/Icon_darkMode';
 
 function App() {
+  const [allProducts, setAllProducts] = useState([]);
+  //   console.log(allProducts, "allProducts");
+
+  const [search, setSearch] = useState(""); 
+  const [filterProducts, setFilterProducts] = useState([]);
+
+  function handleChange(event) {
+    console.log(event.target.value);
+    setSearch(event.target.value);
+
+    let userword = event.target.value.toLowerCase();
+
+    const filteredProduts = allProducts.filter((product) => { // 20 -> men
+      // 20 -> 4 -> 4 result show
+      return product.title.toLowerCase().includes(userword);
+    });
+
+    setFilterProducts(filteredProduts); // 20 -> 4
+
+    console.log(filteredProduts, "filteredProduts");
+  }
+
+
   const { themeValue} = useContext(ThemeContext)
   const [student, setStudent] = useState(["a", "b", "c", "d"])
   const [counter, setCounter] = useState(1234)
@@ -57,7 +82,8 @@ function App() {
       <Icon_darkMode></Icon_darkMode>
       </AppStyled>
     </div> */}
-      <Navbar/>
+      {/* <Navbar/> */}
+      <Navbar2 search={search} handleChange={handleChange}/>
       <Routes>
         <Route path='*' element={ <PageNotFound/> } />
         <Route path='/' element={ <Home/> } />
@@ -83,6 +109,11 @@ function App() {
         <Route path='/use-callback' element={<UseCallback/>} />
         <Route path='/icon-darkmode' element={<Icon_darkMode/>} />
         <Route path='/theme-redux' element={<ThemeRedux/>} />
+        <Route path='/prop-filter' element={<PropFilter 
+             setAllProducts={setAllProducts} 
+             filterProducts={filterProducts} 
+             setFilterProducts={setFilterProducts}
+             />} />
       </Routes>
       {/* <Footer/> */}
     </div>
