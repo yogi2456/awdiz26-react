@@ -30,6 +30,7 @@ import CounterRedux from './components/20-03/CounterRedux';
 import UseMemo from './components/22-03/UseMemo';
 import UseCallback from './components/23-03/UseCallback';
 import ThemeRedux from './components/20-03/ThemeRedux';
+import Icon_darkMode from './components/Icons/Icon_darkMode';
 // import Icon_darkMode from './components/Icons/Icon_darkMode';
 
 function App() {
@@ -80,6 +81,7 @@ function App() {
         <Route path='/counter-redux' element={<CounterRedux/>} />
         <Route path='/use-memo' element={<UseMemo/>} />
         <Route path='/use-callback' element={<UseCallback/>} />
+        <Route path='/icon-darkmode' element={<Icon_darkMode/>} />
         <Route path='/theme-redux' element={<ThemeRedux/>} />
       </Routes>
       {/* <Footer/> */}
