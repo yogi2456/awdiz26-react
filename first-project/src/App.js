@@ -33,6 +33,7 @@ import ThemeRedux from './components/20-03/ThemeRedux';
 import Icon_darkMode from './components/Icons/Icon_darkMode';
 import PropFilter from './components/30-03/PropFilter';
 import Navbar2 from './components/30-03/Navbar2';
+import Profile from './components/Profile';
 // import Icon_darkMode from './components/Icons/Icon_darkMode';
 
 function App() {
@@ -89,6 +90,7 @@ function App() {
         <Route path='/' element={ <Home/> } />
         <Route path='/login' element={ <Login/>} />
         <Route path='/counter' element={ <Counter/>} />
+        <Route path='/profile' element={ <Profile/>}/>
         <Route path='/welcome' element={ <Welcome/>} />
         <Route path='/effectone' element={ <EffectOne/>} />
         <Route path='/effecttwo' element={ <EffectTwo/>} />

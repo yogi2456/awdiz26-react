@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import toast from 'react-hot-toast'
-import { useNavigate } from 'react-router-dom'
+import React, { useState } from 'react';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
 
@@ -37,6 +37,7 @@ const Register = () => {
 
   return (
     <div>
+    <div>
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
         <label>Name : </label> <br/>
@@ -49,6 +50,7 @@ const Register = () => {
         <input type='password' name='confirmpassword' onChange={handleChange} required/> <br/>
         <input  type='submit' value= "Register"/>
       </form>
+      </div>
     </div>
   )
 }
