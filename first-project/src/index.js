@@ -11,6 +11,7 @@ import ThemeContextComponent from './components/Context/ThemeContext';
 import { Provider } from 'react-redux';
 import store from './components/redux/Store';
 import stores from './components/redux/Stores';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

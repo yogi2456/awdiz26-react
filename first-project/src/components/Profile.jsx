@@ -1,22 +1,41 @@
 import React, { useState } from 'react';
-import './Profile.css';
-import Model from "react-modal"
+// import './Profile.css';
+// import Model from "react-modal"
+import { Modal, ModalBody, ModalHeader, Row, Col} from "reactstrap";
 
 const Profile = () => {
   const [load, setLoad] = useState(false)
   return (
-    <div className='container'>
-      <button type="submit" className='btn' onClick={() => setLoad(true)}>Submit</button>
-      <Model isOpen={load}
-      <div className='popup'>
-        <h1>Login</h1>
-        <form>
-            <input placeholder='email'/> <br/>
-            <input placeholder='password'/> <br/>
-            <input type='submit' value="Login" onClick={() => setLoad(false)}/>
-        </form>
-      </div>
-      />
+    <div>
+      <Modal size='sm' isOpen={ load } toggle={() => setLoad(!load)}>
+        <ModalHeader toggle={() => setLoad(!load)}>
+          Popup
+        </ModalHeader>
+        <ModalBody>
+          <form>
+            <Row>
+              <Col>
+              <div>
+              <input placeholder='name'/>
+              </div>
+              </Col>
+              <Col>
+              <div>
+              <input placeholder='name'/>
+              </div>
+              </Col>
+              <Col>
+              <div>
+              <input placeholder='name'/>
+              </div>
+              </Col>
+            </Row>
+          </form>
+        </ModalBody>
+      </Modal>
+      <button className='btn mt-3' style={{backgroundColor: "#0b3629", color: "white"}} onClick={() => setLoad(true)}>
+          open Model
+      </button>
     </div>
   )
 }
