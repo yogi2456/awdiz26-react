@@ -7,26 +7,35 @@ const Profile = () => {
   const [load, setLoad] = useState(false)
   return (
     <div>
-      <Modal size='sm' isOpen={ load } toggle={() => setLoad(!load)}>
+      <Modal size='md' isOpen={ load } toggle={() => setLoad(!load)}>
         <ModalHeader toggle={() => setLoad(!load)}>
           Popup
         </ModalHeader>
         <ModalBody>
           <form>
             <Row>
-              <Col>
+              <Col lg={12}>
               <div>
-              <input placeholder='name'/>
+              <label htmlFor='name'>
+                name
+              </label>
+              <input type='text' className='form-control' placeholder='name'/>
               </div>
               </Col>
-              <Col>
+              <Col lg={12}>
               <div>
-              <input placeholder='name'/>
+              <label htmlFor='name'>
+                name
+              </label>
+              <input type='text' className='form-control' placeholder='name'/>
               </div>
               </Col>
-              <Col>
+              <Col lg={12}>
               <div>
-              <input placeholder='name'/>
+              <label htmlFor='name'>
+                name
+              </label>
+              <input type='text' className='form-control' placeholder='name'/>
               </div>
               </Col>
             </Row>

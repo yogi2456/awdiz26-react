@@ -83,7 +83,7 @@ function App() {
       <Icon_darkMode></Icon_darkMode>
       </AppStyled>
     </div> */}
-      {/* <Navbar/> */}
+      <Navbar/>
       <Navbar2 search={search} handleChange={handleChange}/>
       <Routes>
         <Route path='*' element={ <PageNotFound/> } />
