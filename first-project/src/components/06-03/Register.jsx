@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Register = () => {
 
@@ -16,12 +17,13 @@ const Register = () => {
         setUserData({...userData, [event.target.name]: event.target.value})
     }
 
-    function handleSubmit(event) {
+   async function handleSubmit(event) {
         event.preventDefault();
         if(userData.name && userData.email && userData.password && userData.confirmpassword) {
               // await calling backend one server to another server request, backend validation, data to store mongodb
               try {
-                const response = {data: {success: true, message: "Registration Successfull"}}
+                const response = await axios.post('http://localhost:3003/api/v1/auth/register', { userData });
+                // const response = {data: {success: true, message: "Registration Successfull"}}
                 if(response.data.success) {
                   toast.success(response.data.message, { position: "top-right"})
                   setUserData({name : "", email : "", password : "", confirmpassword : ""})

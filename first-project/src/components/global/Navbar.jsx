@@ -23,7 +23,7 @@ const Navbar = () => {
     // </div>
 
     <div>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      {/* <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,19 +54,9 @@ const Navbar = () => {
     </form>
   </div>
 </nav>
-</nav>
+</nav> */}
 
-<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
-  <!-- Navbar content -->
-</nav>
 
-<nav class="navbar bg-primary" data-bs-theme="dark">
-  <!-- Navbar content -->
-</nav>
-
-<nav class="navbar" style="background-color: #e3f2fd;">
-  <!-- Navbar content -->
-</nav>
     </div>
   )
 }

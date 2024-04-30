@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { createContext, useEffect, useReducer } from 'react'
 import toast from 'react-hot-toast';
 
@@ -31,8 +32,8 @@ const AuthContextComponent = ({ children }) => {
 
     async function getUserData(token) {
         try {
-            // const response = await axios.post('/validate-token', { token: token })
-            const response = { data: { success: true, userData: { name: 'yogesh', email: "yogesh@gmail.com" } } }
+            const response = await axios.get('/validate-token', { withCredentials: true, });
+            // const response = { data: { success: true, userData: { name: 'yogesh', email: "yogesh@gmail.com" } } }
             if (response.data.success) {
                 LOGIN(response.data.userData)
             }
@@ -42,11 +43,12 @@ const AuthContextComponent = ({ children }) => {
     }
 
     useEffect(() => {
-        const token = JSON.parse(localStorage.getItem("token"))
-        if (token) {
-            getUserData(token)
-        }
-    }, [])
+        // const token = JSON.parse(localStorage.getItem("token"))
+        // if (token) {
+        //     getUserData(token)
+        // }
+        getUserData();
+    }, []);
 
     return (
         <AuthContext.Provider value={{ state, LOGIN, LOGOUT }}>
