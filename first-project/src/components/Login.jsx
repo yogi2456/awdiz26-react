@@ -22,7 +22,7 @@ const Login = () => {
         if(userData.email && userData.password) {
             try {
                 const response = await axios.post(
-                    'http://localhost:3003/api/v1/auth/login',
+                    'http://localhost:3003/api/v1/user/login',
                     { userData }, { withCredentials: true })
                 // const response = {data: {success: true, message: "Login Successfull", token: "abdgbhhhhhufejksjk", userData: {name: "yogesh", email: "yogesh@gmail.com"}}}
                 if(response.data.success) {

@@ -34,6 +34,7 @@ import Icon_darkMode from './components/Icons/Icon_darkMode';
 import PropFilter from './components/30-03/PropFilter';
 import Navbar2 from './components/30-03/Navbar2';
 import Profile from './components/Profile';
+import AddProduct from './components/09-05/AddProduct';
 // import Icon_darkMode from './components/Icons/Icon_darkMode';
 
 function App() {
@@ -116,6 +117,7 @@ function App() {
              filterProducts={filterProducts} 
              setFilterProducts={setFilterProducts}
              />} />
+             <Route path='/add-product' element={<AddProduct/>}/>
       </Routes>
       {/* <Footer/> */}
     </div>
