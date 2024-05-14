@@ -1,5 +1,5 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import api from '../../AxiosConfig';
 
 const AllProducts = (props) => {
 
@@ -12,7 +12,7 @@ const AllProducts = (props) => {
     useEffect(() => {
       async function getProducts() {
         try {
-          const response = await axios.get("http://localhost:3003/api/v1/product/get-products");
+          const response = await api.get("/product/get-all-products");
           if(response.data.success){
             setProducts(response.data.products)
           }

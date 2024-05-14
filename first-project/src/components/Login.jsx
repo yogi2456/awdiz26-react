@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from './Context/AuthContext';
-import axios from 'axios';
+import api from '../AxiosConfig';
 
 const Login = () => {
 
@@ -21,8 +21,8 @@ const Login = () => {
         event.preventDefault();
         if(userData.email && userData.password) {
             try {
-                const response = await axios.post(
-                    'http://localhost:3003/api/v1/user/login',
+                const response = await api.post(
+                    '/user/login',
                     { userData }, { withCredentials: true })
                 // const response = {data: {success: true, message: "Login Successfull", token: "abdgbhhhhhufejksjk", userData: {name: "yogesh", email: "yogesh@gmail.com"}}}
                 if(response.data.success) {

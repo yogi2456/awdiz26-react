@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
 import toast from "react-hot-toast";
+import api from "../../AxiosConfig";
 
 const AddProduct = () => {
   const [productData, setProductData] = useState({
@@ -20,8 +20,8 @@ const AddProduct = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:3003/api/v1/product/add-product",
+      const response = await api.post(
+        "/product/add-product",
         { productData, userId: "663c645f9d729446c27d98cb" }
       );
       if (response.data.success) {

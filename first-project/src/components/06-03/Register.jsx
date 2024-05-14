@@ -1,7 +1,7 @@
-import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import api from "../../AxiosConfig";
 // import { AuthContext } from "../Context/AuthContext";
 // import api from "../../AxiosConfig";
 
@@ -25,9 +25,10 @@ function Register() {
     setUserData({ ...userData, [event.target.name]: event.target.value });
   }
 
-  // function handleSelect(event) {
-  //   setUserData({ ...userData, ["role"]: event.target.value });
-  // }
+  function handleSelect(event) {
+    // console.log("event.target.value")
+    setUserData({ ...userData, ["role"]: event.target.value });
+  }
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -39,7 +40,7 @@ function Register() {
     ) {
       // await calling backend one server to another server request, backend validation, data to store mongodb
       try {
-        const response = await axios.post("http://localhost:3003/api/v1/user/register", {
+        const response = await api.post("/user/register", {
           userData,
         });
         // const response = { data: { success: true, message: "Registeration Completed." } }
@@ -50,7 +51,7 @@ function Register() {
             email: "",
             password: "",
             confirmPassword: "",
-            // role: "buyer",
+            role: "buyer",
           });
           toast.success(response.data.message);
           router("/login");
@@ -117,10 +118,10 @@ function Register() {
           required
         />
         <br />
-        {/* <select onChange={handleSelect}>
+        <select onChange={handleSelect}>
           <option value="buyer">Buyer</option>
           <option value="seller">Seller</option>
-        </select> */}
+        </select>
         <br />
         <input type="submit" value="Register" />
       </form>
