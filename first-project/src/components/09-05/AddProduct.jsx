@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import api from "../../AxiosConfig";
+import SellerProtected from '../redirections/SellerProtected'
+import { AuthContext } from "../Context/AuthContext";
 
 const AddProduct = () => {
+
+  const {state} = useContext(AuthContext)
   const [productData, setProductData] = useState({
     name: "",
     category: "",
@@ -22,7 +26,7 @@ const AddProduct = () => {
     try {
       const response = await api.post(
         "/product/add-product",
-        { productData, userId: "663c645f9d729446c27d98cb" }
+        { productData, userId: state.user._id, }
       );
       if (response.data.success) {
         toast.success(response.data.message);
@@ -40,7 +44,7 @@ const AddProduct = () => {
     }
   };
   return (
-    <div>
+    <SellerProtected>
       <h1>Add Product</h1>
       <form onSubmit={handleSubmit}>
         <label>Name:</label> <br />
@@ -100,7 +104,7 @@ const AddProduct = () => {
         <br /> <br />
         <input type="submit" value="Add Product" />
       </form>
-    </div>
+    </SellerProtected>
   );
 };
 

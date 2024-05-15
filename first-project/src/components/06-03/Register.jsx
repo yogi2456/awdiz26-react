@@ -1,13 +1,12 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import api from "../../AxiosConfig";
-// import { AuthContext } from "../Context/AuthContext";
-// import api from "../../AxiosConfig";
+import { AuthContext } from "../Context/AuthContext";
 
 function Register() {
   const router = useNavigate();
-  // const { state } = useContext(AuthContext);
+  const { state } = useContext(AuthContext);
 
   const [userData, setUserData] = useState({
     name: "",
@@ -64,15 +63,15 @@ function Register() {
     }
   }
 
-  // useEffect(() => {
-  //   if (state && state?.user?.role !== undefined) {
-  //     if (state?.user?.role === "buyer") {
-  //       router("/");
-  //     } else {
-  //       router("/seller");
-  //     }
-  //   }
-  // }, [state]);
+  useEffect(() => {
+    if(state && state?.user?.role !== undefined) {
+      if(state?.user?.role === "buyer") {
+        router("/")
+      } else {
+        router("/seller")
+      }
+    }
+  }, [state])
 
   return (
     <div>
@@ -122,10 +121,10 @@ function Register() {
           <option value="buyer">Buyer</option>
           <option value="seller">Seller</option>
         </select>
-        <br />
+        <br /> <br/>
         <input type="submit" value="Register" />
-      </form>
-      {/* <button onClick={() => router("/login")}>Login ?</button> */}
+      </form> <br/>
+      <button onClick={() => router("/login")}>Login ?</button>
     </div>
   );
 }

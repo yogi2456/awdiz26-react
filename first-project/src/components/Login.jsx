@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from './Context/AuthContext';
@@ -8,7 +8,7 @@ const Login = () => {
 
     const router = useNavigate();
 
-    const { LOGIN } =useContext(AuthContext)
+    const { LOGIN, state } =useContext(AuthContext)
     const [userData, setUserData] = useState({email: "", password: ""})
     //console.log(userData)
 
@@ -39,6 +39,16 @@ const Login = () => {
             alert("All fields are required")
         }
     }
+
+    useEffect(() => {
+        if(state && state?.user?.role !== undefined) {
+            if(state?.user?.role === "buyer") {
+                router("/");
+            } else {
+                router("/seller");
+            }
+        }
+    }, [state]);
     return (
         <div>
             <h1>Login Page</h1>
@@ -48,7 +58,9 @@ const Login = () => {
                 <label>Password : </label> <br/>
                 <input type='password' onChange={handleChange} required name='password'/> <br/>
                 <input type='submit' value="Login"/>
-            </form>
+            </form> <br/>
+
+            <button onClick={() => router("/register")}>Register</button>
         </div>
     )
 }

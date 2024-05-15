@@ -17,11 +17,11 @@ import AllProducts from './components/10-03/AllProducts';
 import FakeStoreAllProducts from './components/10-03/FakeStoreAllProducts';
 import Todos from './components/15-03/Todos';
 import Todo from './components/15-03/Todo';
-import Navbar from './components/global/Navbar';
+// import Navbar from './components/global/Navbar';
 // import Footer from './components/global/Footer';
 import PageNotFound from './components/global/PageNotFound';
 import FakeStoreSingleProduct from './components/16-03/FakeStoreSingleProduct';
-import Render from './components/16-03/Render';
+// import Render from './components/16-03/Render';
 import CurrencyConverter from './components/17-03/CurrencyConverter';
 import React, { useContext } from 'react'
 // import styled from "styled-components";
@@ -35,6 +35,9 @@ import PropFilter from './components/30-03/PropFilter';
 import Navbar2 from './components/30-03/Navbar2';
 import Profile from './components/Profile';
 import AddProduct from './components/09-05/AddProduct';
+import Buyer from './components/Projects/Buyer';
+import Seller from './components/Projects/Seller';
+import YourProducts from './components/Projects/YourProducts';
 // import Icon_darkMode from './components/Icons/Icon_darkMode';
 
 function App() {
@@ -84,12 +87,9 @@ function App() {
       <Icon_darkMode></Icon_darkMode>
       </AppStyled>
     </div> */}
-      <Navbar/>
+      {/* <Navbar/> */}
       <Navbar2 search={search} handleChange={handleChange}/>
       <Routes>
-        <Route path='*' element={ <PageNotFound/> } />
-        <Route path='/' element={ <Home/> } />
-        <Route path='/login' element={ <Login/>} />
         <Route path='/counter' element={ <Counter/>} />
         <Route path='/profile' element={ <Profile/>}/>
         <Route path='/welcome' element={ <Welcome/>} />
@@ -97,15 +97,13 @@ function App() {
         <Route path='/effecttwo' element={ <EffectTwo/>} />
         <Route path='/effectthree' element={ <EffectThree/>} />
         <Route path='/effectfour' element={ <EffectFour/>} />
-        <Route path='/register' element={ <Register/>} />
         <Route path='/usereducer' element={ <UseReduer/>} />
         <Route path='/propsdrilling' element={ <PropsDrilling student={student} counter={counter}/> } />
-        <Route path='/all-products' element={ <AllProducts awdiz={products}/>} />
         <Route path='/fake-store-all-products' element= { <FakeStoreAllProducts/>} />
         <Route path='/todos' element= { <Todos/>} />
         <Route path='/todo' element= { <Todo/>} />
         <Route path='/fake-store-single-product/:id' element= {<FakeStoreSingleProduct/>} />
-        <Route path='/render' element={<Render/>}/>
+        {/* <Route path='/render' element={<Render/>}/> */}
         <Route path='/currency-converter' element={<CurrencyConverter/>} />
         <Route path='/counter-redux' element={<CounterRedux/>} />
         <Route path='/use-memo' element={<UseMemo/>} />
@@ -117,7 +115,18 @@ function App() {
              filterProducts={filterProducts} 
              setFilterProducts={setFilterProducts}
              />} />
-             <Route path='/add-product' element={<AddProduct/>}/>
+
+             {/* projects routes */}
+
+        <Route path='*' element={ <PageNotFound/> } />
+        <Route path='/' element={ <Home/> } />
+        <Route path='/buyer' element={ <Buyer/> } />
+        <Route path='/seller' element={ <Seller/> } />
+        <Route path='/register' element={ <Register/>} />
+        <Route path='/login' element={ <Login/>} />
+        <Route path='/add-product' element={<AddProduct/>}/>
+        <Route path='/all-products' element={ <AllProducts awdiz={products}/>} />
+        <Route path='/your-products' element={<YourProducts/>}/>
       </Routes>
       {/* <Footer/> */}
     </div>
