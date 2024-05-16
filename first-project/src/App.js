@@ -38,6 +38,7 @@ import AddProduct from './components/09-05/AddProduct';
 import Buyer from './components/Projects/Buyer';
 import Seller from './components/Projects/Seller';
 import YourProducts from './components/Projects/YourProducts';
+import Cart from './components/Cart/Cart';
 // import Icon_darkMode from './components/Icons/Icon_darkMode';
 
 function App() {
@@ -127,6 +128,7 @@ function App() {
         <Route path='/add-product' element={<AddProduct/>}/>
         <Route path='/all-products' element={ <AllProducts awdiz={products}/>} />
         <Route path='/your-products' element={<YourProducts/>}/>
+        <Route path='/cart' element={<Cart/>}/>
       </Routes>
       {/* <Footer/> */}
     </div>

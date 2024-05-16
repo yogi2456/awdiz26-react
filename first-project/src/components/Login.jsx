@@ -31,9 +31,11 @@ const Login = () => {
                     toast.success(response.data.message,) 
                     setUserData({email: "", password: ""})
                     router('/')
+                } else {
+                    toast.error(response.data.message)
                 }
             } catch (error) {
-                toast.error(error)
+                toast.error(error?.response?.data?.message)
             }
         } else {
             alert("All fields are required")

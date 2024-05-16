@@ -28,7 +28,7 @@ const AllProducts = (props) => {
 
      {products.length?  <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-around"}}>
       {products.map((productObj) => (
-        <div style={{width: "22%", height: "350px", border: "1px solid black", marginBottom: "30px"}}>
+        <div style={{width: "22%", height: "400px", border: "1px solid black", marginBottom: "30px"}}>
             <img style={{width: "100%", height: "40%", padding: "10px"}} src={productObj.image} alt=''/>
             <h1 style={{fontSize: "12px"}}>Name: {productObj.name}</h1>
             <p>Category: {productObj.category}</p>
