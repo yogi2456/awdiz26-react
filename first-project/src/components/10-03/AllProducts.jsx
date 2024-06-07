@@ -12,7 +12,7 @@ const AllProducts = (props) => {
     useEffect(() => {
       async function getProducts() {
         try {
-          const response = await api.get("/product/get-all-products");
+          const response = await api.get("/api/v1/product/get-all-products");
           if(response.data.success){
             setProducts(response.data.products)
           }

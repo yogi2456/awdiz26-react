@@ -12,7 +12,7 @@ const YourProducts = () => {
     useEffect(() => {
       async function getProducts() {
         try {
-          const response = await api.post("/product/get-product-by-seller", { userId: state?.user?._id});
+          const response = await api.post("/api/v1/product/get-product-by-seller", { userId: state?.user?._id});
           if(response.data.success){
             setAllProducts(response.data.products)
           }

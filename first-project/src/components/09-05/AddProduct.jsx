@@ -25,7 +25,7 @@ const AddProduct = () => {
     event.preventDefault();
     try {
       const response = await api.post(
-        "/product/add-product",
+        "/api/v1/product/add-product",
         { productData, userId: state.user._id, }
       );
       if (response.data.success) {

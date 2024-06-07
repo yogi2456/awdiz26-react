@@ -20,7 +20,7 @@ const Home = () => {
     useEffect(() => {
       async function getProducts() {
         try {
-          const response = await api.get("/product/get-all-products");
+          const response = await api.get("/api/v1/product/get-all-products");
           if(response.data.success){
             setAllProducts(response.data.products)
           }
@@ -37,7 +37,7 @@ const Home = () => {
         router("/login")
       }
       try {
-        const response = await api.post("/user/add-to-cart", {userId : state?.user?._id, productId : productId,})
+        const response = await api.post("/api/v1/user/add-to-cart", {userId : state?.user?._id, productId : productId,})
         if(response.data.success){
           toast.success(response.data.message);
         }
@@ -52,7 +52,7 @@ const Home = () => {
         router("/login")
       }
       try {
-        const response = await api.post("/user/add-to-wishlist", {userId : state?.user?._id, productId: productId })
+        const response = await api.post("/api/v1/user/add-to-wishlist", {userId : state?.user?._id, productId: productId })
         if(response.data.message){
           toast.success(response.data.message);
         }
