@@ -22,7 +22,7 @@ const AuthContextComponent = ({ children }) => {
   function LOGIN(data) {
     dispatch({ type: "LOGIN", payload: data });
   }
-``
+
   function LOGOUT() {
     dispatch({ type: "LOGOUT" });
   }
